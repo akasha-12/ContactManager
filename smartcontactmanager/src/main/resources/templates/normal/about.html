@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title >this is about page</title>
+
+<style>
+
+
+</style>
+
+</head>
+<body>
+
+<section class="kk">
+<div  th:if="${session.message}" class="container">
+
+<div th:classappend="${'alert-'+session.message.type}"  role="alert">
+<span class="ty" th:text="${session.message.content}"></span>
+</div>
+
+<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+</div>
+
+
+<div class="content">
+
+
+<div class="bar"><i class="fas fa-bars m-3" id="we" onclick="toggleSidebar()"></i>
+
+
+</div>
+
+
+
+</div>
+
+<h3 class="hh"><span class="gg" >Welcome to user dashboard</span></h3>
+
+   <div class="sidebar">
+   
+   <span  class="crossbtn"   onclick="toggleSidebar()">&times;</span>
+
+   <a th:href="@{/}" class="item"><i class="fa-sharp fa-solid fa-house-user"></i> Home</a>
+   <a th:href="@{/user/show-contacts/0}" class="item"><i class="fa-sharp fa-solid fa-address-card"></i> View contact</a>
+   <a th:href="@{/user/add-contact}" class="item"><i class="fa-sharp fa-solid fa-address-card"></i> Add contact</a>
+   <a href="" class="item"><i class="fa-solid fa-user"></i> Your profile</a>
+   <a href="" class="item"><i class="fa-solid fa-bars"></i> Settings</a>
+    <a th:href="@{/logout}" class="item"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    <div class="divider"></div>
+    </div>
+
+
+
+
+
+
+</section>
+
+</body>
+</html>

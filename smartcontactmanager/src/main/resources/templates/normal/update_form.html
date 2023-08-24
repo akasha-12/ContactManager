@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<section class="jk" >
+
+
+<div class="card mr-2  ll">
+
+<div class="card-body ">
+
+<h1  style="color:red">Update contact</h1>
+
+<!-- message after adding the contact -->
+
+
+<div  th:if="${session.message}" class="container">
+
+<div th:classappend="${'alert-'+session.message.type}"  role="alert">
+<span class="ty" th:text="${session.message.content}"></span>
+</div>
+
+<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+</div>
+
+
+
+
+<div class="container-fluid mt-1">
+
+<div class="row">
+
+<div class="col-md-8 offset-md-4">
+
+
+<form enctype="multipart/form-data" 
+      method="post" 
+       th:action="@{/user/process-update}" 
+      
+      th:object="${contact}" 
+      class="mt-2">
+
+
+<input type="hidden" th:value="${contact.cid}" name="cid" />
+<!-- first name field -->
+
+<div class="input-group cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fa fa-plus"></i>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+<input th:value="${contact.name}" required type="text"  id="firstname" name="name" placeholder="enter name" size="50"/>
+
+
+
+</div>
+
+
+
+
+<!-- second name  -->
+
+
+<div class="input-group mt-3 cm ">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fas fa-user-alt"></i>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+<input th:value="${contact.secondName}" required type="text"  id="secondname" name="secondName" placeholder="enter nickname here" size="50"/>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- third field phone -->
+
+
+<div class="input-group mt-3 cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fas fa-phone"></i>
+
+
+</div>
+
+</div>
+
+<input th:value="${contact.phone}" type="number" id="phone" name="phone" placeholder="enter phone number here" oninput="validatePhoneNumber()" />
+
+
+</div>
+
+
+
+
+<!-- forth field work -->
+
+
+<div class="input-group mt-3 cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fas fa-home"></i>
+
+
+</div>
+
+</div>
+
+<input th:value="${contact.work}" required type="text"  id="work" name="work" placeholder="enter the work here" size="50"/>
+
+</div>
+
+
+
+
+<!-- fifth field email -->
+
+
+<div class="input-group mt-3 cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+
+
+
+</div>
+
+</div>
+
+<input th:value="${contact.email}"   required type="email"  id="email" name="email" placeholder="enter the email here" size="50"/>
+
+</div>
+
+
+
+
+
+
+
+<!-- sixth field image -->
+
+
+<div class="input-group mt-3 cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fas fa-image"></i>
+
+
+</div>
+
+</div>
+
+<input type="file"  id="byte" name="profileImage" />
+
+</div>
+
+
+
+<!-- sixth field description -->
+
+
+<div class="input-group mt-3 cm">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+
+<i class="fa-brands fa-stack-exchange"></i>
+
+
+</div>
+
+</div>
+
+<textarea th:text="${contact.description}"  id="des" name="description" placeholder="enter the desscription"  rows="10"></textarea>
+
+</div>
+
+
+
+
+
+
+
+<!-- <button type="button" class="btn btn-success" >Submit</button> -->
+
+
+
+
+<a th:href="@{/user/update-contact}">
+<button type="submit" class="btn btn-success" >Update</button>
+</a>
+
+
+</form>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+</body>
+</html>

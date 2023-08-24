@@ -1,0 +1,206 @@
+
+
+.bg-primary{
+	
+	background:#009688;
+	
+	
+}
+
+
+
+.banner{
+	width:100%;
+	height:93vh;
+	background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7))  ,url(../image/pexels-andrea-piacquadio-3760263.jpg );
+	background-size:cover;
+	color:white;
+	
+}
+
+.class1{
+	
+	margin-top:50px;
+	margin-left:35px;
+	
+}
+
+.my-cart{
+	
+	padding:25px;
+	background:#efefba;
+	
+}
+
+.btn:hover {
+	
+  background-color: #0069d9;
+  color: black;
+  font-weight: bold;
+}
+
+.btn{
+	
+	
+	margin-top:30px;
+}
+
+
+.reset{
+	
+margin-top:10px;	
+
+}
+
+
+
+
+
+
+/* login form */
+
+
+
+
+
+
+
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+
+}
+
+.sidebar{
+	
+z-index:9999999999;
+	width:18%;
+	height:100%;
+	background:#baf9fe;
+	position:fixed;
+	/* padding-top: 45px; */
+	
+}
+
+.sidebar a{
+	
+	margin-top:20px;
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: red;
+	
+	
+}
+
+.content{
+	
+	margin-left: 15%;
+	
+	text-align:center;
+
+}
+
+
+
+.sidebar a:hover{
+	
+	background:#e2e2e2;
+	
+	
+}
+
+
+.sidebar .divider{
+	
+	height:.5px;
+	width:100%;
+	background:#ff0000;
+	margin-top:20px;
+}
+
+
+
+@media only screen and (max-width: 600px)
+
+{
+.sidebar{
+	
+	display:none;
+	width:80% !important;
+	background: white;
+	height:100vh;
+	position:fixed;
+	padding-top:20px;
+	
+	
+}	
+
+.content{
+	
+	margin-left: 0% !important;
+	
+	
+}
+	
+	
+	
+	
+	
+}
+
+
+.sidebar .crossbtn{
+	
+	
+	position:absolute;
+	top:0;
+	right: 35px;
+	font-size:34px;
+	cursor:pointer;
+	
+	
+}
+
+.bar{
+	
+	
+	
+	margin-right:1250px;
+}
+
+.gg{
+	
+	
+	border-radius:10px;
+	margin-left:25%;
+
+	background-color:#f7c4fb;
+}
+
+.hh {
+	
+		text-align:center;
+}
+
+
+.kk{
+	background-color:#bffcff;
+}
+
+
+
+
+
+

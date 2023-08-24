@@ -1,0 +1,52 @@
+package com.smart.config;
+
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.smart.dao.UserRepository;
+import com.smart.entities.User;
+
+
+//class  which loads user-specific data. and implements the UserDetailsService interfacec
+public class UserDetailServicesImpl implements UserDetailsService {
+	
+	@Autowired
+	private UserRepository userRepository;
+
+	
+	/*
+	 * Locates the user based on the username. In the actual implementation, the
+	 * search may possibly be case sensitive,
+	 */
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		
+		// fetching the user from database
+		
+		
+		
+	User user=	userRepository.getUserByUserName(username);
+	if(user==null){
+		
+		
+		throw new UsernameNotFoundException("could not found");
+		
+	}
+		
+	CustomUserDetails customUserDetails=new CustomUserDetails(user);
+		
+		return customUserDetails;
+	}
+	
+	
+	
+
+}
